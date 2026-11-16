@@ -4,16 +4,16 @@ $ErrorActionPreference = 'Stop'
 $Here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $App  = Join-Path $env:LOCALAPPDATA 'vcfa-folder-replication'
 
-# Find Python 3.9+ (the 'py' launcher first, then 'python')
+# Find Python 3.10+ (the 'py' launcher first, then 'python')
 $py = $null
 foreach ($c in @(@('py','-3'), @('python'))) {
     try {
-        $v = & $c[0] $c[1..($c.Length-1)] -c "import sys; print(int(sys.version_info >= (3,9)))" 2>$null
+        $v = & $c[0] $c[1..($c.Length-1)] -c "import sys; print(int(sys.version_info >= (3,10)))" 2>$null
         if ($v -eq '1') { $py = $c; break }
     } catch {}
 }
 if (-not $py) {
-    Write-Host 'Python 3.9 or newer is required. Install it from https://www.python.org/downloads/ (tick "Add python.exe to PATH"), then re-run this script.'
+    Write-Host 'Python 3.10 or newer is required. Install it from https://www.python.org/downloads/ (tick "Add python.exe to PATH"), then re-run this script.'
     exit 1
 }
 function Run-Py { param([string[]]$a) & $py[0] $py[1..($py.Length-1)] @a; if ($LASTEXITCODE) { throw "Python command failed" } }

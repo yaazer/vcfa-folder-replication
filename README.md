@@ -23,8 +23,8 @@ are used, so you can safely press every button, including Undo.
 
 | Platform | Command |
 |---|---|
-| Linux / macOS | `./install.sh` (needs Python 3.9+; no root; installs a private virtualenv and a `vcfa-folders` command) |
-| Windows | `powershell -ExecutionPolicy Bypass -File .\install.ps1` (needs Python 3.9+ from python.org; creates Desktop and Start Menu shortcuts) |
+| Linux / macOS | `./install.sh` (needs Python 3.10+; no root; installs a private virtualenv and a `vcfa-folders` command) |
+| Windows | `powershell -ExecutionPolicy Bypass -File .\install.ps1` (needs Python 3.10+ from python.org; creates Desktop and Start Menu shortcuts) |
 | Any (pip) | `pip install .` |
 
 Then run `vcfa-folders` (or use the Windows shortcut). It opens the GUI in your browser.

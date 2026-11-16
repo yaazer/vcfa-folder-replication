@@ -8,8 +8,8 @@ APP="${XDG_DATA_HOME:-$HOME/.local/share}/vcfa-folder-replication"
 BIN="$HOME/.local/bin"
 
 PY="$(command -v python3 || true)"
-if [ -z "$PY" ] || ! "$PY" -c 'import sys; sys.exit(sys.version_info < (3, 9))'; then
-  echo "Python 3.9 or newer is required. Install it first, e.g.:"
+if [ -z "$PY" ] || ! "$PY" -c 'import sys; sys.exit(sys.version_info < (3, 10))'; then
+  echo "Python 3.10 or newer is required. Install it first, e.g.:"
   echo "  Debian/Ubuntu: sudo apt install python3 python3-venv"
   echo "  RHEL/Fedora:   sudo dnf install python3"
   exit 1
