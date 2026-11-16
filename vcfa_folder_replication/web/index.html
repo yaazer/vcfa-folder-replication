@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vCenter Folder Replication</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo" aria-hidden="true">&#128193;</span>
+    <div><h1>vCenter Folder Replication</h1><p class="sub">Copy your VM folder structure from one vCenter to another &mdash; safely.</p></div></div>
+  <div class="top-right"><span id="demoPill" class="pill demo" hidden>DEMO MODE &middot; nothing real is touched</span><span id="ver" class="muted"></span></div>
+</header>
+<nav id="stepper" class="stepper" aria-label="Steps"></nav>
+<div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+<div class="layout">
+  <main id="main" tabindex="-1"></main>
+  <aside id="coach" class="coach" hidden></aside>
+</div>
+<footer class="foot">
+  <strong>Safety promise:</strong> this tool only ever <em>creates</em> empty folders (and, if you press Undo, removes folders it created that are still empty).
+  It never renames, moves or deletes anything else, and never touches VMs. Credentials stay in memory on this computer.
+</footer>
+<script src="/app.js"></script>
+</body>
+</html>

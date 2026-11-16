@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vcfa-folder-replication"
+version = "1.0.0"
+description = "Capture VM folder structure from one vCenter and replicate it one-to-one on another (vCenter 8.0 and 9.0). GUI, CLI and demo mode."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["pyvmomi>=8.0.1"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+vcfa-folders = "vcfa_folder_replication.cli:main"
+
+[project.gui-scripts]
+vcfa-folders-gui = "vcfa_folder_replication.cli:gui_main"
+
+[tool.setuptools]
+packages = ["vcfa_folder_replication"]
+
+[tool.setuptools.package-data]
+vcfa_folder_replication = ["web/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
